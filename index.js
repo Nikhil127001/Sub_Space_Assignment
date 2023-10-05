@@ -3,7 +3,11 @@ const app = express();
 const apiRoutes =  require('./Routes/apiRoutes')
 require('dotenv').config();
 
-
+app.use('/' , (req,res) => {
+    res.json({
+        message : 'Sub space Api is Working'
+    })
+})
 app.use('/api' , apiRoutes)
 
 app.use((error,req,res,next) => {
